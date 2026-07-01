@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT • Card Banking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    
+        
+</head>
+<body class="bg-zinc-950 text-white">
+    <!-- Navbar -->
+    <nav class="bg-zinc-950/95 backdrop-blur-lg border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <!-- REPLACE THIS SVG WITH YOUR IMAGE -->
+                    <!-- <img src="WhatsApp Image 2026-06-19 at 5.31.18 PM.jpeg" class="h-9 w-auto" alt="BT Logo"> -->
+                    
+                    <!-- Current SVG approximation of your logo -->
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-11 h-11 flex items-center justify-center">
+                            <!-- <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+                                <img src="WhatsApp Image 2026-06-19 at 5.31.18 PM.jpeg" class="h-9 w-auto" alt="BT Logo">
+                                <defs>
+                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#f97316"/>
+                                        <stop offset="100%" stop-color="#fb923c"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Left vertical bars -->
+                                <rect x="8" y="12" width="14" height="76" rx="3" fill="url(#logoGradient)"/>
+                                <rect x="26" y="12" width="8" height="76" rx="2" fill="url(#logoGradient)"/>
+                                
+                                <!-- Top bar -->
+                                <rect x="8" y="12" width="62" height="14" rx="3" fill="url(#logoGradient)"/>
+                                
+                                <!-- Right B shape -->
+                                <path d="M70 12 Q92 12 92 35 Q92 50 78 50 Q92 50 92 65 Q92 88 70 88 L62 88 L62 12 Z" fill="url(#logoGradient)"/>
+                                
+                                <!-- Inner T -->
+                                <rect x="38" y="32" width="32" height="8" rx="2" fill="#111827"/>
+                                <rect x="50" y="32" width="8" height="38" rx="2" fill="#111827"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-display text-3xl font-semibold tracking-tighter">BITTOKEN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm">
+                    <a href="#features" class="hover:text-white/80 transition-colors">Features</a>
+                    <a href="#cards" class="hover:text-white/80 transition-colors">Cards</a>
+                    <a href="#dashboard" class="hover:text-white/80 transition-colors">Dashboard</a>
+                    <a href="#pricing" class="hover:text-white/80 transition-colors">Pricing</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <button onclick="showLoginModal()"
+                            class="px-5 py-2.5 text-sm font-medium hover:bg-white/5 transition-colors rounded-2xl">
+                        Log in
+                    </button>
+                    <button onclick="document.getElementById('get-started').scrollIntoView({ behavior: 'smooth' })"
+                            class="px-6 py-2.5 bg-white text-zinc-950 font-semibold text-sm rounded-2xl hover:bg-white/90 transition-all active:scale-[0.985]">
+                        Get started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Hero Text -->
+            <div class="max-w-xl">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-3xl bg-white/5 border border-white/10 mb-6">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                    <span class="text-sm font-medium">Now available in 40+ countries</span>
+                </div>
+                
+                <h1 class="section-header tracking-tighter leading-none mb-6">
+                    Banking.<br>
+                    <span class="fintech-gradient">Beautifully simple.</span>
+                </h1>
+                
+                <p class="text-xl text-white/70 max-w-md mb-10">
+                    Issue, manage and spend with premium virtual &amp; physical cards. 
+                    Complete control in one elegant interface.
+                </p>
+                
+                <div class="flex flex-wrap items-center gap-4">
+                    <button onclick="document.getElementById('get-started').scrollIntoView({ behavior: 'smooth' })"
+                            class="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all text-white font-semibold rounded-3xl flex items-center gap-x-3 text-lg shadow-xl shadow-orange-500/30 active:scale-[0.985]">
+                        <span>Get started free</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    
+                    <button onclick="watchDemo()"
+                            class="px-7 py-4 border border-white/20 hover:bg-white/5 transition-all font-medium rounded-3xl flex items-center gap-x-3 text-lg">
+                        <i class="fa-solid fa-play mr-1"></i>
+                        <span>Watch 1:42 demo</span>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-x-8 mt-10 text-sm">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-zinc-700 border border-zinc-800 overflow-hidden"><img src="https://i.pravatar.cc/32?img=28" class="w-full h-full object-cover"></div>
+                        <div class="w-8 h-8 rounded-full bg-zinc-700 border border-zinc-800 overflow-hidden"><img src="https://i.pravatar.cc/32?img=47" class="w-full h-full object-cover"></div>
+                        <div class="w-8 h-8 rounded-full bg-zinc-700 border border-zinc-800 overflow-hidden"><img src="https://i.pravatar.cc/32?img=32" class="w-full h-full object-cover"></div>
+                    </div>
+                    <div class="text-white/60">
+                        <span class="font-semibold text-white">42,891</span> people joined this month
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual: Floating Cards -->
+            <div class="relative flex justify-center md:justify-end">
+                <div class="relative w-full max-w-[420px]">
+                    <!-- Main Card -->
+                    <div class="banking-card w-full aspect-[1.6/1] rounded-3xl p-6 border border-white/10 relative overflow-hidden shadow-2xl">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <div class="flex items-center gap-x-2">
+                                    <div class="w-8 h-8">
+                                       
+                                       <img src="WhatsApp Image 2026-06-19 at 5.31.18 PM.jpeg" class="h-9 w-auto" alt="BT Logo"> <!-- <svg width="32" height="32" viewBox="0 0 100 100" fill="none"> -->
+                                            <defs>
+                                                <linearGradient id="cardLogo" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                    <stop offset="0%" stop-color="#f97316"/>
+                                                    <stop offset="100%" stop-color="#fb923c"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <rect x="8" y="12" width="14" height="76" rx="3" fill="url(#cardLogo)"/>
+                                            <rect x="26" y="12" width="8" height="76" rx="2" fill="url(#cardLogo)"/>
+                                            <rect x="8" y="12" width="62" height="14" rx="3" fill="url(#cardLogo)"/>
+                                            <path d="M70 12 Q92 12 92 35 Q92 50 78 50 Q92 50 92 65 Q92 88 70 88 L62 88 L62 12 Z" fill="url(#cardLogo)"/>
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold tracking-widest text-sm">BITTOKEN</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-white/50">VISA</div>
+                                <div class="font-mono text-xs tracking-[3px] text-white/70">••• 4821</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-auto pt-8">
+                            <div class="text-3xl font-semibold tracking-tighter">$12,489.42</div>
+                            <div class="text-xs text-white/50 mt-1">Available balance</div>
+                        </div>
+                        
+                        <div class="absolute bottom-6 right-6 text-xs font-mono tracking-widest text-white/40">12/29</div>
+                    </div>
+                    
+                    <!-- Second floating card -->
+                    <div class="banking-card absolute -right-4 -bottom-6 w-[240px] aspect-[1.6/1] rounded-3xl p-5 border border-white/10 shadow-2xl scale-[0.92]">
+                        <div class="flex justify-between">
+                            <div class="text-xs font-medium">Premium • Metal</div>
+                            <i class="fa-brands fa-cc-mastercard text-2xl text-white/80"></i>
+                        </div>
+                        <div class="mt-6">
+                            <div class="font-mono text-lg tracking-[2px]">•••• •••• •••• 9912</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trust Bar -->
+    <div class="border-y border-white/10 py-5">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 text-white/40 text-sm font-medium">
+                <div>Featured in</div>
+                <div class="flex items-center gap-x-8">
+                    <span class="font-semibold text-white/60">TechCrunch</span>
+                    <span class="font-semibold text-white/60">Forbes</span>
+                    <span class="font-semibold text-white/60">The Verge</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="max-w-screen-2xl mx-auto px-8 pt-20 pb-16">
+        <div class="text-center mb-14">
+            <div class="text-orange-500 font-semibold tracking-widest text-sm mb-3">POWERFUL BY DESIGN</div>
+            <h2 class="section-header tracking-tighter">Everything you need.<br>Nothing you don’t.</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Feature Cards -->
+            <div class="glass p-7 rounded-3xl border border-white/10">
+                <div class="w-12 h-12 flex items-center justify-center bg-orange-500/10 text-orange-500 rounded-2xl mb-6">
+                    <i class="fa-solid fa-bolt text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-3">Instant virtual cards</h3>
+                <p class="text-white/60 text-[15px]">Create unlimited virtual cards in seconds. Perfect for subscriptions, online shopping, and team spending.</p>
+            </div>
+            
+            <div class="glass p-7 rounded-3xl border border-white/10">
+                <div class="w-12 h-12 flex items-center justify-center bg-orange-500/10 text-orange-500 rounded-2xl mb-6">
+                    <i class="fa-solid fa-shield-halved text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-3">Military-grade security</h3>
+                <p class="text-white/60 text-[15px]">Freeze cards instantly, set spending limits, and get real-time fraud alerts. 3D Secure enabled by default.</p>
+            </div>
+            
+            <div class="glass p-7 rounded-3xl border border-white/10">
+                <div class="w-12 h-12 flex items-center justify-center bg-orange-500/10 text-orange-500 rounded-2xl mb-6">
+                    <i class="fa-solid fa-globe text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-3">Global spending</h3>
+                <p class="text-white/60 text-[15px]">Spend anywhere in the world with zero foreign transaction fees. 40+ currencies supported.</p>
+            </div>
+            
+            <div class="glass p-7 rounded-3xl border border-white/10">
+                <div class="w-12 h-12 flex items-center justify-center bg-orange-500/10 text-orange-500 rounded-2xl mb-6">
+                    <i class="fa-solid fa-chart-line text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl mb-3">Smart insights</h3>
+                <p class="text-white/60 text-[15px]">AI-powered spending breakdowns, category insights, and personalized saving recommendations.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div id="cards" class="bg-zinc-900 py-16">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <div class="text-orange-500 font-semibold tracking-widest text-sm mb-2">CHOOSE YOUR STYLE</div>
+                    <h2 class="section-header tracking-tighter">Beautiful cards.<br>Built for you.</h2>
+                </div>
+                <a href="#" class="mt-4 md:mt-0 inline-flex items-center text-orange-500 font-medium hover:text-orange-400 transition-colors">
+                    Compare all cards <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1: Standard -->
+                <div class="premium-card banking-card rounded-3xl p-8 border border-white/10">
+                    <div class="flex justify-between mb-8">
+                        <div>
+                            <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">STANDARD</span>
+                        </div>
+                        <span class="font-mono text-xs text-white/50">VISA</span>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="text-4xl font-semibold tracking-tighter">Standard</div>
+                        <div class="text-orange-400 font-medium">Free forever</div>
+                    </div>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>1 physical + unlimited virtual cards</span></div>
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>Real-time notifications</span></div>
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>Basic analytics</span></div>
+                    </div>
+                    
+                    <button class="mt-8 w-full py-3.5 border border-white/20 hover:bg-white/5 rounded-2xl font-semibold transition-colors">Get Standard</button>
+                </div>
+                
+                <!-- Card 2: Premium (Popular) -->
+                <div class="premium-card banking-card rounded-3xl p-8 border border-orange-500/30 relative overflow-hidden">
+                    <div class="absolute top-6 right-6 px-3 py-1 bg-orange-500 text-xs font-bold rounded-full">MOST POPULAR</div>
+                    
+                    <div class="flex justify-between mb-8">
+                        <div>
+                            <span class="px-3 py-1 text-xs font-medium bg-orange-500/20 text-orange-400 rounded-full">PREMIUM</span>
+                        </div>
+                        <span class="font-mono text-xs text-white/50">VISA</span>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="text-4xl font-semibold tracking-tighter">Premium</div>
+                        <div class="flex items-baseline gap-x-1">
+                            <span class="text-3xl font-semibold">$9</span>
+                            <span class="text-white/60">/month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>Everything in Standard</span></div>
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>Metal physical card</span></div>
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>5% cashback on travel</span></div>
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>Priority support</span></div>
+                    </div>
+                    
+                    <button class="mt-8 w-full py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:brightness-110 rounded-2xl font-semibold transition-all">Get Premium</button>
+                </div>
+                
+                <!-- Card 3: Business -->
+                <div class="premium-card banking-card rounded-3xl p-8 border border-white/10">
+                    <div class="flex justify-between mb-8">
+                        <div>
+                            <span class="px-3 py-1 text-xs font-medium bg-white/10 rounded-full">BUSINESS</span>
+                        </div>
+                        <span class="font-mono text-xs text-white/50">VISA</span>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="text-4xl font-semibold tracking-tighter">Business</div>
+                        <div class="flex items-baseline gap-x-1">
+                            <span class="text-3xl font-semibold">$29</span>
+                            <span class="text-white/60">/month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>Everything in Premium</span></div>
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>Team accounts &amp; approvals</span></div>
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>Expense management</span></div>
+                        <div class="flex items-center gap-x-3"><i class="fa-solid fa-check text-orange-500 w-4"></i> <span>API access</span></div>
+                    </div>
+                    
+                    <button class="mt-8 w-full py-3.5 border border-white/20 hover:bg-white/5 rounded-2xl font-semibold transition-colors">Get Business</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Preview -->
+    <div id="dashboard" class="max-w-screen-2xl mx-auto px-8 py-20">
+        <div class="text-center mb-12">
+            <div class="text-orange-500 font-semibold tracking-widest text-sm mb-3">POWERFUL TOOLS</div>
+            <h2 class="section-header tracking-tighter">Your entire financial life,<br>beautifully organized.</h2>
+        </div>
+        
+        <!-- Dashboard Mockup -->
+        <div class="max-w-[1100px] mx-auto bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <!-- Dashboard Header -->
+            <div class="px-8 py-5 border-b border-white/10 flex items-center justify-between bg-zinc-950">
+                <div class="flex items-center gap-x-4">
+                    <div class="font-semibold">Good morning, Alex</div>
+                    <div class="px-3 py-1 text-xs bg-white/5 rounded-full flex items-center gap-x-1.5">
+                        <div class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                        <span class="text-xs">All systems operational</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-x-3">
+                    <div class="flex items-center bg-zinc-800 rounded-2xl px-1 py-1">
+                        <div class="px-4 text-sm">Feb 2026</div>
+                    </div>
+                    <div class="w-9 h-9 bg-zinc-700 rounded-2xl overflow-hidden">
+                        <img src="https://i.pravatar.cc/36?img=68" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Balance -->
+                <div class="lg:col-span-5 bg-zinc-950 rounded-2xl p-6 border border-white/10">
+                    <div class="text-sm text-white/60 mb-1">Total balance</div>
+                    <div class="text-5xl font-semibold tracking-tighter">$48,291.84</div>
+                    <div class="flex items-center gap-x-2 mt-2">
+                        <span class="text-emerald-400 text-sm font-medium">+$2,840 this month</span>
+                    </div>
+                    
+                    <div class="mt-6 grid grid-cols-2 gap-3">
+                        <div>
+                            <div class="text-xs text-white/50">Available to spend</div>
+                            <div class="font-semibold">$31,420</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-white/50">Invested</div>
+                            <div class="font-semibold">$16,871</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="lg:col-span-7 bg-zinc-950 rounded-2xl p-6 border border-white/10">
+                    <div class="text-sm text-white/60 mb-4">Quick actions</div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <button class="flex items-center gap-x-3 px-4 py-3 bg-white/5 hover:bg-white/10 transition-colors rounded-2xl text-sm">
+                            <i class="fa-solid fa-plus text-orange-500"></i>
+                            <span>New virtual card</span>
+                        </button>
+                        <button class="flex items-center gap-x-3 px-4 py-3 bg-white/5 hover:bg-white/10 transition-colors rounded-2xl text-sm">
+                            <i class="fa-solid fa-paper-plane text-orange-500"></i>
+                            <span>Send money</span>
+                        </button>
+                        <button class="flex items-center gap-x-3 px-4 py-3 bg-white/5 hover:bg-white/10 transition-colors rounded-2xl text-sm">
+                            <i class="fa-solid fa-credit-card text-orange-500"></i>
+                            <span>Freeze card</span>
+                        </button>
+                        <button class="flex items-center gap-x-3 px-4 py-3 bg-white/5 hover:bg-white/10 transition-colors rounded-2xl text-sm">
+                            <i class="fa-solid fa-chart-bar text-orange-500"></i>
+                            <span>View insights</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Your Cards -->
+                <div class="lg:col-span-12">
+                    <div class="flex items-center justify-between mb-4 px-1">
+                        <div class="font-semibold">Your cards (4)</div>
+                        <button class="text-sm text-orange-500 hover:text-orange-400">Manage all →</button>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <!-- Mini Cards -->
+                        <div onclick="highlightCard(this)" class="banking-card cursor-pointer rounded-2xl p-5 border border-white/10 hover:border-orange-500/50">
+                            <div class="flex justify-between">
+                                <div class="text-xs">Personal • Visa</div>
+                                <div class="text-emerald-400 text-xs">Active</div>
+                            </div>
+                            <div class="mt-4 font-mono text-sm tracking-widest">•••• 4821</div>
+                            <div class="mt-1 text-lg font-semibold">$8,240</div>
+                        </div>
+                        
+                        <div onclick="highlightCard(this)" class="banking-card cursor-pointer rounded-2xl p-5 border border-white/10 hover:border-orange-500/50">
+                            <div class="flex justify-between">
+                                <div class="text-xs">Premium • Metal</div>
+                                <div class="text-emerald-400 text-xs">Active</div>
+                            </div>
+                            <div class="mt-4 font-mono text-sm tracking-widest">•••• 9912</div>
+                            <div class="mt-1 text-lg font-semibold">$19,450</div>
+                        </div>
+                        
+                        <div onclick="highlightCard(this)" class="banking-card cursor-pointer rounded-2xl p-5 border border-white/10 hover:border-orange-500/50">
+                            <div class="flex justify-between">
+                                <div class="text-xs">Business • Visa</div>
+                                <div class="text-emerald-400 text-xs">Active</div>
+                            </div>
+                            <div class="mt-4 font-mono text-sm tracking-widest">•••• 3340</div>
+                            <div class="mt-1 text-lg font-semibold">$12,890</div>
+                        </div>
+                        
+                        <div onclick="highlightCard(this)" class="banking-card cursor-pointer rounded-2xl p-5 border border-white/10 hover:border-orange-500/50 opacity-60">
+                            <div class="flex justify-between">
+                                <div class="text-xs">Virtual • Travel</div>
+                                <div class="text-amber-400 text-xs">Frozen</div>
+                            </div>
+                            <div class="mt-4 font-mono text-sm tracking-widest">•••• 7721</div>
+                            <div class="mt-1 text-lg font-semibold">$7,711</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div id="get-started" class="max-w-screen-2xl mx-auto px-8 pb-20">
+        <div class="bg-gradient-to-br from-zinc-900 to-zinc-950 border border-white/10 rounded-3xl p-12 text-center">
+            <h2 class="text-4xl font-semibold tracking-tighter mb-4">Ready to experience better banking?</h2>
+            <p class="max-w-md mx-auto text-white/70 mb-8">Join over 180,000 people who already use BT for their everyday spending.</p>
+            
+            <button onclick="startOnboarding()"
+                    class="px-10 py-4 bg-white text-zinc-950 font-semibold rounded-3xl text-lg hover:bg-white/90 active:scale-[0.985] transition-all inline-flex items-center gap-x-3">
+                Create your free account
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            
+            <div class="mt-6 text-xs text-white/40">No credit card required • 14-day free Premium trial</div>
+        </div>
+    </div>
+
+    <footer class="border-t border-white/10 py-12">
+        <div class="max-w-screen-2xl mx-auto px-8 text-sm text-white/50 flex flex-col md:flex-row justify-between gap-y-4">
+            <div>© 2026 BT Banking. All rights reserved.</div>
+            <div class="flex gap-x-6">
+                <a href="#" class="hover:text-white/70">Privacy</a>
+                <a href="#" class="hover:text-white/70">Terms</a>
+                <a href="#" class="hover:text-white/70">Security</a>
+                <a href="#" class="hover:text-white/70">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#f97316');
+        }
+        
+        function highlightCard(element) {
+            // Remove highlight from all cards
+            document.querySelectorAll('.banking-card').forEach(el => {
+                el.classList.remove('!border-orange-500', '!shadow-orange-500/30');
+            });
+            
+            // Add highlight to clicked card
+            element.classList.add('!border-orange-500', '!shadow-orange-500/30');
+            
+            // Optional: show toast
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 bg-zinc-900 border border-white/20 text-sm px-5 py-3 rounded-2xl flex items-center gap-x-3 shadow-xl`;
+            toast.innerHTML = `
+                <span>Card selected • Details opened in app</span>
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.transition = 'all 0.3s ease';
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2200);
+        }
+        
+        function watchDemo() {
+            const modal = document.createElement('div');
+            modal.className = `fixed inset-0 bg-black/90 flex items-center justify-center z-[100]`;
+            modal.innerHTML = `
+                <div class="max-w-2xl w-full mx-4 bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
+                    <div class="px-6 py-4 border-b border-white/10 flex justify-between items-center">
+                        <div class="font-semibold">BT • Product Demo</div>
+                        <button onclick="this.closest('.fixed').remove()" class="text-white/60 hover:text-white">✕</button>
+                    </div>
+                    <div class="aspect-video bg-black flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="mx-auto w-16 h-16 flex items-center justify-center bg-orange-500/10 rounded-full mb-4">
+                                <i class="fa-solid fa-play text-orange-500 text-4xl ml-1"></i>
+                            </div>
+                            <p class="text-white/70">Demo video would play here</p>
+                            <p class="text-xs text-white/40 mt-1">(In real version this would be an embedded video)</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        function showLoginModal() {
+            const modal = document.createElement('div');
+            modal.className = `fixed inset-0 bg-black/80 flex items-center justify-center z-[100]`;
+            modal.innerHTML = `
+                <div class="max-w-md w-full mx-4 glass border border-white/10 rounded-3xl p-8">
+                    <div class="text-center mb-6">
+                        <div class="mx-auto mb-4">${document.querySelector('nav svg').outerHTML}</div>
+                        <h3 class="font-semibold text-2xl">Welcome back</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-xs text-white/60 block mb-1.5">Email address</label>
+                            <input type="email" value="alex@company.com" class="w-full bg-zinc-900 border border-white/10 px-4 py-3.5 rounded-2xl text-sm focus:outline-none focus:border-orange-500">
+                        </div>
+                        <div>
+                            <label class="text-xs text-white/60 block mb-1.5">Password</label>
+                            <input type="password" value="demo123" class="w-full bg-zinc-900 border border-white/10 px-4 py-3.5 rounded-2xl text-sm focus:outline-none focus:border-orange-500">
+                        </div>
+                    </div>
+                    
+                    <button onclick="this.closest('.fixed').remove(); alert('Logged in successfully! (Demo)')" 
+                            class="mt-6 w-full py-3.5 bg-white text-black font-semibold rounded-2xl">
+                        Log in
+                    </button>
+                    
+                    <div class="text-center mt-4 text-xs text-white/50">
+                        Forgot password? <span class="text-orange-400 cursor-pointer">Reset it</span>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        function startOnboarding() {
+            const modal = document.createElement('div');
+            modal.className = `fixed inset-0 bg-black/90 flex items-center justify-center z-[100]`;
+            modal.innerHTML = `
+                <div class="max-w-md w-full mx-4 glass border border-white/10 rounded-3xl p-8 text-center">
+                    <div class="text-orange-500 mb-3">
+                        <i class="fa-solid fa-rocket text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">You're almost there!</h3>
+                    <p class="text-white/70 mb-6">We've sent a verification link to your email. Check your inbox to complete onboarding.</p>
+                    
+                    <div class="bg-zinc-950 border border-white/10 p-4 rounded-2xl text-left text-sm mb-6">
+                        <div class="flex justify-between text-xs mb-1"><span>Email</span> <span class="text-emerald-400">Verified</span></div>
+                        <div>alex@company.com</div>
+                    </div>
+                    
+                    <button onclick="this.closest('.fixed').remove()" 
+                            class="w-full py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl font-semibold">
+                        Continue to dashboard
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        // Keyboard support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "/" && document.activeElement.tagName === "BODY") {
+                e.preventDefault();
+                const search = prompt("Search cards or features (demo)");
+                if (search) alert(`Searching for: ${search}`);
+            }
+        });
+        
+        // Initialize
+        function init() {
+            initializeTailwind();
+            
+            // Random subtle animation on hero cards
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.banking-card');
+                if (cards.length > 0) {
+                    cards[0].style.transition = 'transform 1.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 1.2s ease';
+                }
+            }, 800);
+            
+            console.log('%c[BT Banking] Premium website initialized successfully', 'color:#666');
+        }
+        
+        window.onload = init;
+    </script>
+</body>
+</html>
